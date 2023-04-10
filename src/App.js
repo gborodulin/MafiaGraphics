@@ -110,121 +110,112 @@ function App() {
   return (
     <div className="App">
       <div className="graphics">
-        <div className="groups">
-          <div className="mafiaContainer">
-            <p className="mafiaTitle">Mafia</p>
-            <div className="mafiaPlayers">
-              {players.map((player) => {
-                if (player.role === "Mafia")
-                  if (player.alive === "Alive") {
-                    return <p className="playerInMafia">{player.name}</p>;
-                  } else {
-                    return (
-                      <div
-                        style={{
-                          textDecoration: "line-through",
-                          color: "black",
-                        }}
-                      >
-                        <p className="playerInMafia">{player.name}</p>
-                      </div>
-                    );
-                  }
-              })}
-            </div>
-          </div>
-          <div className="townContainer">
-            <p className="townTitle">Town</p>
-            <div className="townPlayers">
-              {players.map((player) => {
-                if (player.role === "Cop")
-                  if (player.alive === "Alive") {
-                    return (
-                      <p className="cop playerInTown">Cop: {player.name}</p>
-                    );
-                  } else {
-                    return (
-                      <div
-                        style={{
-                          textDecoration: "line-through",
-                          color: "red",
-                        }}
-                      >
-                        {" "}
-                        <p className="cop playerInTown">Cop: {player.name}</p>
-                      </div>
-                    );
-                  }
-              })}
-
-              {players.map((player) => {
-                if (player.role === "Medic")
-                  if (player.alive === "Alive") {
-                    return (
-                      <p className="medic playerInTown">Medic: {player.name}</p>
-                    );
-                  } else {
-                    return (
-                      <div
-                        style={{
-                          textDecoration: "line-through",
-                          color: "red",
-                        }}
-                      >
-                        {" "}
-                        <p className="medic playerInTown">
-                          Medic: {player.name}
-                        </p>
-                      </div>
-                    );
-                  }
-              })}
-
-              {players.map((player) => {
-                if (player.role === "Vig")
-                  if (player.alive === "Alive") {
-                    return (
-                      <p className="vig playerInTown">Vig: {player.name}</p>
-                    );
-                  } else {
-                    return (
-                      <div
-                        style={{
-                          textDecoration: "line-through",
-                          color: "red",
-                        }}
-                      >
-                        <p className="vig playerInTown">Vig: {player.name}</p>
-                      </div>
-                    );
-                  }
-              })}
-
-              {players.map((player) => {
-                if (player.role === "Town")
-                  if (player.alive === "Alive") {
-                    return <p className="town playerInTown">{player.name}</p>;
-                  } else {
-                    return (
-                      <div
-                        style={{
-                          textDecoration: "line-through",
-                          color: "red",
-                        }}
-                      >
-                        <p className="town playerInTown">{player.name}</p>
-                      </div>
-                    );
-                  }
-              })}
-            </div>
+        <div className="mafiaContainer">
+          <p className="mafiaTitle">Mafia</p>
+          <div className="mafiaPlayers">
+            {players.map((player) => {
+              if (player.role === "Mafia")
+                if (player.alive === "Alive") {
+                  return <p className="playerInMafia">{player.name}</p>;
+                } else {
+                  return (
+                    <div
+                      style={{
+                        textDecoration: "line-through",
+                        color: "black",
+                      }}
+                    >
+                      <p className="playerInMafia">{player.name}</p>
+                    </div>
+                  );
+                }
+            })}
           </div>
         </div>
+        <div className="townContainer">
+          <p className="townTitle">Town</p>
+          <div className="townPlayers">
+            {players.map((player) => {
+              if (player.role === "Cop")
+                if (player.alive === "Alive") {
+                  return <p className="cop playerInTown">{player.name}</p>;
+                } else {
+                  return (
+                    <div
+                      style={{
+                        textDecoration: "line-through",
+                        color: "red",
+                      }}
+                    >
+                      {" "}
+                      <p className="cop playerInTown">{player.name}</p>
+                    </div>
+                  );
+                }
+            })}
+
+            {players.map((player) => {
+              if (player.role === "Medic")
+                if (player.alive === "Alive") {
+                  return <p className="medic playerInTown">{player.name}</p>;
+                } else {
+                  return (
+                    <div
+                      style={{
+                        textDecoration: "line-through",
+                        color: "red",
+                      }}
+                    >
+                      {" "}
+                      <p className="medic playerInTown">{player.name}</p>
+                    </div>
+                  );
+                }
+            })}
+
+            {players.map((player) => {
+              if (player.role === "Vig")
+                if (player.alive === "Alive") {
+                  return <p className="vig playerInTown">{player.name}</p>;
+                } else {
+                  return (
+                    <div
+                      style={{
+                        textDecoration: "line-through",
+                        color: "red",
+                      }}
+                    >
+                      <p className="vig playerInTown">{player.name}</p>
+                    </div>
+                  );
+                }
+            })}
+
+            {players.map((player) => {
+              if (player.role === "Town")
+                if (player.alive === "Alive") {
+                  return <p className="town playerInTown">{player.name}</p>;
+                } else {
+                  return (
+                    <div
+                      style={{
+                        textDecoration: "line-through",
+                        color: "red",
+                      }}
+                    >
+                      <p className="town playerInTown">{player.name}</p>
+                    </div>
+                  );
+                }
+            })}
+          </div>
+        </div>
+
+        <div className="seats">{DotSemiCircle(players)}</div>
         <div className="countdown">
           <p className="countdownTitle">Countdown</p>
           <div className="countdownTime">{formatTime(countdown)}</div>
         </div>
-        <div className="seats">{DotSemiCircle(players)}</div>
       </div>
       <div className="console">
         <div className="generalInputArea">

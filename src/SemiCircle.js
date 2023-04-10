@@ -28,10 +28,10 @@ const DotSemiCircle = (players) => {
 
       if (playerAtSeat && playerAtSeat.alive == "Alive") {
         if (playerAtSeat.role === "Cop") color = "blue";
-        if (playerAtSeat.role === "Vig") color = "green";
-        if (playerAtSeat.role === "Medic") color = "pink";
+        if (playerAtSeat.role === "Vig") color = "purple";
+        if (playerAtSeat.role === "Medic") color = "#FF73B9";
         if (playerAtSeat.role === "Mafia") color = "red";
-        if (playerAtSeat.role === "Town") color = "tan";
+        if (playerAtSeat.role === "Town") color = "white";
       }
     }
 

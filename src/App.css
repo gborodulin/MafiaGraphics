@@ -9,39 +9,41 @@
 }
 .graphics {
   display: grid;
-  grid-template-columns: 3% 44% 25% 25% 3%;
+  grid-template-columns: 2% 22% 22% 25% 25% 2%;
   grid-template-rows: 5% 90% 5%;
   padding-top: 20px;
   background-color: green;
+
+  column-gap: 10px;
 }
 
-.groups {
-  grid-column: 2 / 3;
-  grid-row: 2 / 3;
-
-  display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 100%;
+.mafiaContainer,
+.townContainer,
+.seats,
+.countdown {
+  background-color: grey;
+  font-size: 20px;
+  font-weight: 700;
+  opacity: 0.8;
 }
 
 .mafiaContainer {
-  grid-column: 1 / 2;
-  background-color: white;
-  border-color: black;
-  border-width: 3px;
-  border-style: solid;
+  grid-column: 2 / 3;
+  grid-row: 2/3;
+
   display: grid;
   justify-items: center;
 }
 
 .mafiaTitle {
+  margin-bottom: 0px;
   margin-top: -15px;
-  font-size: 20px;
+  font-size: 35px;
   padding: 10px;
-  width: 80px;
+  width: fit-content;
   height: fit-content;
-  background-color: red;
-  color: black;
+  background-color: black;
+  color: red;
 }
 
 .mafiaPlayers {
@@ -53,23 +55,22 @@
 }
 
 .townContainer {
-  grid-column: 2 / 3;
-  background-color: white;
-  border-color: black;
-  border-width: 3px;
-  border-style: solid;
+  grid-column: 3 / 4;
+  grid-row: 2/3;
+
   display: grid;
   justify-items: center;
 }
 
 .townTitle {
+  margin-bottom: 0px;
   margin-top: -15px;
-  font-size: 20px;
+  font-size: 35px;
   padding: 10px;
-  width: 80px;
+  width: fit-content;
   height: fit-content;
-  background-color: tan;
-  color: black;
+  background-color: black;
+  color: white;
 }
 
 .townPlayers {
@@ -85,14 +86,10 @@
 }
 
 .countdown {
-  grid-column: 3 / 4;
+  grid-column: 5 / 6;
   grid-row: 2 / 3;
-  background-color: white;
 
   display: grid;
-  border-color: black;
-  border-width: 3px;
-  border-style: solid;
   font-size: 50px;
 }
 
@@ -110,13 +107,10 @@
 .seats {
   grid-column: 4 / 5;
   grid-row: 2 / 3;
-  background-color: white;
+
   padding-top: 20px;
 
   display: grid;
-  border-color: black;
-  border-width: 3px;
-  border-style: solid;
 }
 
 .playerInMafia {
@@ -128,14 +122,14 @@
 }
 
 .vig {
-  color: green;
+  color: purple;
 }
 
 .medic {
-  color: pink;
+  color: #ff73b9;
 }
 .town {
-  color: tan;
+  color: white;
 }
 
 .console {
