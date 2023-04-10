@@ -1,38 +1,190 @@
 .App {
   text-align: center;
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+
+  grid-template-columns: 100%;
+  grid-template-rows: 40% 60%;
+}
+.graphics {
+  display: grid;
+  grid-template-columns: 3% 44% 25% 25% 3%;
+  grid-template-rows: 5% 90% 5%;
+  padding-top: 20px;
+  background-color: green;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.groups {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.mafiaContainer {
+  grid-column: 1 / 2;
+  background-color: white;
+  border-color: black;
+  border-width: 3px;
+  border-style: solid;
+  display: grid;
+  justify-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.mafiaTitle {
+  margin-top: -15px;
+  font-size: 20px;
+  padding: 10px;
+  width: 80px;
+  height: fit-content;
+  background-color: red;
+  color: black;
+}
+
+.mafiaPlayers {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 200px;
+  width: 75%;
+}
+
+.townContainer {
+  grid-column: 2 / 3;
+  background-color: white;
+  border-color: black;
+  border-width: 3px;
+  border-style: solid;
+  display: grid;
+  justify-items: center;
+}
+
+.townTitle {
+  margin-top: -15px;
+  font-size: 20px;
+  padding: 10px;
+  width: 80px;
+  height: fit-content;
+  background-color: tan;
+  color: black;
+}
+
+.townPlayers {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 200px;
+  width: 75%;
+}
+
+.playerInTown {
+  margin: 6px;
+}
+
+.countdown {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+  background-color: white;
+
+  display: grid;
+  border-color: black;
+  border-width: 3px;
+  border-style: solid;
+  font-size: 50px;
+}
+
+.countdownTitle {
+  margin-top: -15px;
+  font-size: 20px;
+  padding: 10px;
+  width: fit-content;
+  height: fit-content;
+  background-color: Yellow;
+  color: black;
+  justify-self: center;
+}
+
+.seats {
+  grid-column: 4 / 5;
+  grid-row: 2 / 3;
+  background-color: white;
+  padding-top: 20px;
+
+  display: grid;
+  border-color: black;
+  border-width: 3px;
+  border-style: solid;
+}
+
+.playerInMafia {
+  color: red;
+}
+
+.cop {
+  color: blue;
+}
+
+.vig {
+  color: green;
+}
+
+.medic {
+  color: pink;
+}
+.town {
+  color: tan;
+}
+
+.console {
+  background-color: grey;
+}
+
+.generalInputArea {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 200px;
+}
+
+.addPlayerContainer {
+  display: flex;
+}
+
+.playersContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.playersContainer {
+  margin-right: 10px;
+}
+
+.player {
+  background-color: aqua;
+  color: black;
+  width: 160px;
+  height: 160px;
+  margin: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+}
+
+.player select {
+  width: 50%;
+  margin: 5px;
+}
+
+.removePlayerButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
