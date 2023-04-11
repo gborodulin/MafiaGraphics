@@ -2,10 +2,10 @@ import React from "react";
 
 const DotSemiCircle = (players) => {
   const dotCount = 14;
-  const dotRadius = 5;
-  const radius = 100;
-  const centerX = 170;
-  const centerY = 75;
+  const dotRadius = 10;
+  const radius = 150;
+  const centerX = 180;
+  const centerY = 0;
   const startAngle = Math.PI;
   const endAngle = 2 * Math.PI;
 
@@ -29,7 +29,7 @@ const DotSemiCircle = (players) => {
       if (playerAtSeat && playerAtSeat.alive == "Alive") {
         if (playerAtSeat.role === "Cop") color = "blue";
         if (playerAtSeat.role === "Vig") color = "purple";
-        if (playerAtSeat.role === "Medic") color = "#FF73B9";
+        if (playerAtSeat.role === "Medic") color = "yellow";
         if (playerAtSeat.role === "Mafia") color = "red";
         if (playerAtSeat.role === "Town") color = "white";
       }
@@ -55,9 +55,8 @@ const DotSemiCircle = (players) => {
     <div
       style={{
         position: "relative",
-        width: "100%",
-        height: "100%",
         transform: "scaleX(-1) scaleY(-1)",
+        display: "grid",
       }}
     >
       {dots}

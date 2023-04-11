@@ -211,7 +211,16 @@ function App() {
           </div>
         </div>
 
-        <div className="seats">{DotSemiCircle(players)}</div>
+        <div className="seats">
+          {DotSemiCircle(players)}
+          <div className="keyContainer">
+            <p style={{ color: "red" }}>Mafia</p>
+            <p style={{ color: "white" }}>Town</p>
+            <p style={{ color: "blue" }}>Cop</p>
+            <p style={{ color: "pink" }}>Medic</p>
+            <p style={{ color: "purple" }}>Vigilante</p>
+          </div>
+        </div>
         <div className="countdown">
           <p className="countdownTitle">Countdown</p>
           <div className="countdownTime">{formatTime(countdown)}</div>
