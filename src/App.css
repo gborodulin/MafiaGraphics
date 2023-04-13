@@ -166,6 +166,8 @@
 .player {
   background-color: aqua;
   color: black;
+  border-color: black;
+  border-style: solid;
   width: 160px;
   height: 160px;
   margin: 20px;

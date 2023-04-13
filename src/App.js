@@ -107,6 +107,19 @@ function App() {
     setPlayers([]);
   }
 
+  function getRoleColor(player) {
+    let color = "grey";
+    if (player.alive == "Alive") {
+      if (player.role === "Cop") color = "blue";
+      if (player.role === "Vig") color = "purple";
+      if (player.role === "Medic") color = "#ff73b9";
+      if (player.role === "Mafia") color = "red";
+      if (player.role === "Town") color = "white";
+    }
+
+    return color;
+  }
+
   return (
     <div className="App">
       <div className="graphics">
@@ -217,7 +230,7 @@ function App() {
             <p style={{ color: "red" }}>Mafia</p>
             <p style={{ color: "white" }}>Town</p>
             <p style={{ color: "blue" }}>Cop</p>
-            <p style={{ color: "pink" }}>Medic</p>
+            <p style={{ color: "#ff73b9" }}>Medic</p>
             <p style={{ color: "purple" }}>Vigilante</p>
           </div>
         </div>
@@ -244,58 +257,66 @@ function App() {
           </div>
         </div>
         <div className="playersContainer">
-          {players.map((player) => (
-            <div className="player" key={player.id} id={player.id}>
-              <p>{player.name}</p>
-              <button className="removePlayerButton" onClick={removePlayer}>
-                X
-              </button>
-
-              <select
-                className="playerRole"
-                value={player.role}
-                onChange={handlePlayerRoleChange}
+          {players.map((player) => {
+            const roleColor = getRoleColor(player);
+            return (
+              <div
+                className="player"
+                style={{ backgroundColor: roleColor }}
+                key={player.id}
+                id={player.id}
               >
-                <option value="None">None</option>
-                <option value="Mafia">Mafia</option>
-                <option value="Town">Town</option>
-                <option value="Cop">Cop</option>
-                <option value="Medic">Medic</option>
-                <option value="Vig">Vig</option>
-              </select>
+                <p>{player.name}</p>
+                <button className="removePlayerButton" onClick={removePlayer}>
+                  X
+                </button>
 
-              <select
-                className="playerSeat"
-                value={player.seat}
-                onChange={handlePlayerSeatChange}
-              >
-                <option value="None">None</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-                <option value="13">13</option>
-                <option value="14">14</option>
-              </select>
+                <select
+                  className="playerRole"
+                  value={player.role}
+                  onChange={handlePlayerRoleChange}
+                >
+                  <option value="None">None</option>
+                  <option value="Mafia">Mafia</option>
+                  <option value="Town">Town</option>
+                  <option value="Cop">Cop</option>
+                  <option value="Medic">Medic</option>
+                  <option value="Vig">Vig</option>
+                </select>
 
-              <select
-                className="playerAlive"
-                value={player.alive}
-                onChange={handlePlayerAliveChange}
-              >
-                <option value="Alive">Alive</option>
-                <option value="Dead">Dead</option>
-              </select>
-            </div>
-          ))}
+                <select
+                  className="playerSeat"
+                  value={player.seat}
+                  onChange={handlePlayerSeatChange}
+                >
+                  <option value="None">None</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                </select>
+
+                <select
+                  className="playerAlive"
+                  value={player.alive}
+                  onChange={handlePlayerAliveChange}
+                >
+                  <option value="Alive">Alive</option>
+                  <option value="Dead">Dead</option>
+                </select>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
